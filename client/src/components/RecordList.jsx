@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Record = (props) => (
+    // Tbale rows and columns tr and td
+
   <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
     <td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
       {props.record.name}
@@ -70,7 +72,7 @@ export default function RecordList() {
         <Record
           record={record}
           deleteRecord={() => deleteRecord(record._id)}
-          key={record._id}
+          key={record._id} 
         />
       );
     });
