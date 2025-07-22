@@ -1,0 +1,3 @@
+To start the website run two terminals:
+- Client:  npm run dev
+- Server: node --env-file=config.env server
