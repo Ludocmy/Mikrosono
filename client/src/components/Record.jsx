@@ -1,12 +1,22 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Select from "react-select";
 
 export default function Record() {
+
+  const genreOptions = [
+    {value: "breakbeat", label: "Breakbeat"},
+    {value: "techno", label: "Techno"},
+    {value: "idm", label: "IDM"},
+  ]
+
   const [form, setForm] = useState({
     name: "",
     position: "",
     level: "",
+    genre: [],
   });
+
   const [isNew, setIsNew] = useState(true);
   const params = useParams();
   const navigate = useNavigate();
@@ -75,7 +85,7 @@ export default function Record() {
     } catch (error) {
       console.error('A problem occurred adding or updating a record: ', error);
     } finally {
-      setForm({ name: "", position: "", level: "" });
+      setForm({ name: "", position: "", level: "", genre: [] });
       navigate("/");
     }
   }
@@ -143,6 +153,12 @@ export default function Record() {
               </div>
             </div>
             <div>
+              <label
+                htmlFor="position"
+                className="block text-sm font-medium leading-6 text-slate-900"
+              >
+                Position Options
+              </label>
               <fieldset className="mt-4">
                 <legend className="sr-only">Position Options</legend>
                 <div className="space-y-4 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
@@ -192,6 +208,28 @@ export default function Record() {
                     >
                       Senior
                     </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div className="sm:col-span-4">
+              <label
+                htmlFor="position"
+                className="block text-sm font-medium leading-6 text-slate-900"
+              >
+                Genre Options
+              </label>
+              <fieldset className="mt-4">
+                <legend className="sr-only">Genre Options</legend>
+                <div className="space-y-4 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
+                  <div className="flex items-center">
+                    <Select
+                      defaultValue={slectedOptions}
+                      options={genreOptions}
+                      value={form.genre}
+                      onChange={(e) => updateForm({ genre: e.target.value })}
+                      isMulti={true}
+                    />
                   </div>
                 </div>
               </fieldset>
