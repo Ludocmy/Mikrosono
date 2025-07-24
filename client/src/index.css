@@ -10,6 +10,8 @@
 
 @theme {
     --color-black: #242424;
+    --color-grey: #8c8c8c;
+    --color-light-grey: #F2F2F2;
 
     --font-gravity: ABCGravity, sans-serif;
 }

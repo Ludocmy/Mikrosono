@@ -1,9 +1,14 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
+import Search from "./Search.jsx";
 import SVGIcon from "../assets/MikrosonoLogo.svg?react";
 
 export default function Navbar() {
+
+  const [searchTerm, setSearchTerm] = React.useState(''); 
+
   return (
-    <div className ="bg-[#8c8c8c] p-4 pr-5 pl-5">
+    <div className ="bg-grey p-4 pr-5 pl-5">
       <nav className="flex items-center">
 
           <NavLink to="/">
@@ -11,6 +16,8 @@ export default function Navbar() {
           </NavLink>
 
           <div className = "flex-auto w-10"></div>
+
+          <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
           <NavLink className="flex items-end justify-end whitespace-nowrap pr-5 pl-5 not-first:font-gravity text-4xl font-stretch-extended ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none bg-background hover:text-blue-600" to="/create">
             Radio Shows
@@ -20,7 +27,9 @@ export default function Navbar() {
             Events
           </NavLink>
 
-          <NavLink className="flex items-end justify-end whitespace-nowrap pr-5 pl-5 font-gravity text-4xl font-stretch-extended ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none bg-background hover:text-blue-600" to="/create">
+          
+
+          {/* <NavLink className="flex items-end justify-end whitespace-nowrap pr-5 pl-5 font-gravity text-4xl font-stretch-extended ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none bg-background hover:text-blue-600" to="/create">
             About
           </NavLink>
 
@@ -30,7 +39,7 @@ export default function Navbar() {
 
           <NavLink className="flex items-end justify-end whitespace-nowrap pr-5 pl-5 font-gravity text-4xl font-stretch-extended ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none bg-background hover:text-blue-600" to="/create">
             · · ·
-          </NavLink>
+          </NavLink> */}
 
       </nav>
     </div>

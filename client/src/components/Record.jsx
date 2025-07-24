@@ -212,7 +212,7 @@ export default function Record() {
                 </div>
               </fieldset>
             </div>
-            <div className="sm:col-span-4">
+            {/* <div className="sm:col-span-4">
               <label
                 htmlFor="position"
                 className="block text-sm font-medium leading-6 text-slate-900"
@@ -224,7 +224,7 @@ export default function Record() {
                 <div className="space-y-4 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
                   <div className="flex items-center">
                     <Select
-                      defaultValue={slectedOptions}
+                      defaultValue={}
                       options={genreOptions}
                       value={form.genre}
                       onChange={(e) => updateForm({ genre: e.target.value })}
@@ -233,7 +233,7 @@ export default function Record() {
                   </div>
                 </div>
               </fieldset>
-            </div>
+            </div> */}
           </div>
         </div>
         <input
